@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <head>
     <title>Food App</title>
     <link href="foodCart.css" rel="stylesheet">

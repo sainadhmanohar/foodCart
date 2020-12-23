@@ -1,0 +1,199 @@
+body {
+  background-color: #f3f2ef;
+}
+body .container {
+  cursor: default;
+}
+body .container .foodItemsContainer {
+  margin: 50px;
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+}
+body .container .foodItemsContainer .foodItems {
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 2px 8px 3px #5f5f5f;
+  padding: 5px;
+  height: fit-content;
+  margin-bottom: 30px;
+  transform: scale(1);
+}
+body .container .foodItemsContainer .foodItems:hover {
+  transform: scale(1.1, 1.1);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+body .container .foodItemsContainer .foodItems:hover .details_foodItems .orderFoodBtn {
+  display: block;
+  animation: orderanime 0.7s;
+}
+@keyframes orderanime {
+  from {
+    opacity: 0;
+    transform: translate(150px, 26px);
+  }
+  to {
+    transform: translate(80px, 26px);
+  }
+}
+body .container .foodItemsContainer .foodItems img {
+  border-top-right-radius: 10px ;
+  border-top-left-radius: 10px ;
+  width: 200px;
+  height: 210px;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems {
+  width: 180px;
+  top: -3px;
+  padding: 10px 10px 0 10px;
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(to top right, rgba(255, 255, 255, 0), #ffffff 100%);
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .foodName {
+  font-weight: 800;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .foodPrice {
+  font-weight: 800;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .orderFoodBtn {
+  display: none;
+  position: absolute;
+  transform: translate(80px, 26px);
+  background-image: linear-gradient(to right, #0f6cbb, #053bb3, #f13c13, #fd190e);
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+  width: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  z-index: 2;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .orderFoodBtn:hover {
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .orderFoodBtn:hover .addedCartItemCount {
+  color: red;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .orderFoodBtn .addedCartItemCount {
+  color: blue;
+  padding: 8px;
+  background-color: white;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .moreBtn {
+  margin-top: 10px;
+  width: inherit;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  background: blue;
+  color: #fdfcfb;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 8px 2px #6e62b1;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .moreBtn:hover {
+  background-color: #0949fdcc;
+}
+body .container .foodItemsContainer .foodItems .details_foodItems .descriptionItem {
+  position: absolute;
+  bottom: 101px;
+  background: #f8f7f5;
+  padding: 10px;
+  left: 0;
+  width: inherit;
+  max-height: 90px;
+  overflow-y: auto;
+}
+body .container .checkoutFooter {
+  position: fixed;
+  bottom: 5px;
+  background-color: #f3f2ef;
+  box-shadow: 0px -1px 15px 2px #5d5d5d;
+  width: 95%;
+  z-index: 2;
+  margin: 2px 30px;
+}
+body .container .checkoutFooter .cartHeaderOpen {
+  background-color: #c0c0c0;
+  position: fixed;
+  width: 95%;
+}
+body .container .checkoutFooter .cartHeaderClose {
+  background-color: white;
+  position: static;
+  width: 100%;
+}
+body .container .checkoutFooter #cartHeader {
+  z-index: 2;
+}
+body .container .checkoutFooter #cartHeader p {
+  margin: 18px 10px;
+}
+body .container .checkoutFooter #cartHeader .btn {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  background-color: #fc1105;
+}
+body .container .checkoutFooter #cartHeader .btn:hover {
+  background-color: #e83535d1;
+}
+body .container .checkoutFooter #cartHeader #closeCart {
+  display: none;
+  padding: 5px;
+  border-radius: 5px;
+  background: #413e50;
+}
+body .container .checkoutFooter #cartHeader .totalAmount {
+  display: inline-block;
+  position: relative;
+  right: -59%;
+}
+body .container .checkoutFooter #cartHeader #cartBtn {
+  float: right;
+  margin: 4px 10px;
+}
+body .container .checkoutFooter .ordercartList {
+  overflow-y: scroll;
+}
+body .container .checkoutFooter .ordercartList .cartListItem {
+  padding: 8px;
+  margin-bottom: 2px;
+  display: block;
+  border: 1px solid #7d7d7d;
+}
+body .container .checkoutFooter .ordercartList .cartListItem:hover {
+  box-shadow: 0px 1px 10px 1px #1b1b1b;
+}
+body .container .checkoutFooter .ordercartList .cartListItem .orderItemList {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+body .container .checkoutFooter .ordercartList .cartListItem .orderItemList div {
+  display: inline-block;
+  top: -60px;
+  position: relative;
+  left: 60px;
+}
+body .container .checkoutFooter .ordercartList .cartListItem .amount {
+  position: relative;
+  right: 10%;
+  float: right;
+}

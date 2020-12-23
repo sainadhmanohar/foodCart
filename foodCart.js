@@ -103,38 +103,36 @@ var copy = 0;
             }else{
               document.getElementById("addedItems_"+event.target.id.split("_")[1]).innerText = Number(document.getElementById("addedItems_"+event.target.id.split("_")[1]).innerText) + 1;
               //document.getElementById("ordersCount").innerText = Number(document.getElementById("ordersCount").innerText) + 1;
-            
-              
             }
-            var orderItemsObj = {
-              orderedID : "orderId_"+event.target.id.split("_")[1],
-              orderedName : document.getElementById("foodName_"+event.target.id.split("_")[1]).innerText,
-              orderedPrice : document.getElementById("foodPrice_"+event.target.id.split("_")[1]).innerText,
-              orderedImg  : document.getElementById("foodImg_"+event.target.id.split("_")[1]).getAttribute("src"),
-              orderedQuantity :document.getElementById("addedItems_"+event.target.id.split("_")[1]).innerText
-            }
-            console.log(orderItemsObj);
-            // if(orderItemsListObj.indexOf(orderItemsObj) == -1){
-            //   orderItemsObj["orderedQuantity"] = 
-            // }
-            let found = 0,index=0;
-            orderItemsListObj.length?0:orderItemsListObj.push(orderItemsObj)
-            if(orderItemsListObj.length){
-              for(var i=0;i<orderItemsListObj.length;i++){
-                if(orderItemsListObj[i]["orderedID"] == "orderId_"+event.target.id.split("_")[1]){
-                  found = 1;
-                  index = i;
-                }
-              }
-              if(found ==1){
-                orderItemsListObj[index]["orderedQuantity"] = document.getElementById("addedItems_"+event.target.id.split("_")[1]).innerText;
-              }else{
-                orderItemsListObj.push(orderItemsObj)
-              }
-            }
-            console.log(copy);
-            
           }
+          var orderItemsObj = {
+            orderedID : "orderId_"+event.target.id.split("_")[1],
+            orderedName : document.getElementById("foodName_"+event.target.id.split("_")[1]).innerText,
+            orderedPrice : document.getElementById("foodPrice_"+event.target.id.split("_")[1]).innerText,
+            orderedImg  : document.getElementById("foodImg_"+event.target.id.split("_")[1]).getAttribute("src"),
+            orderedQuantity :document.getElementById("addedItems_"+event.target.id.split("_")[1]).innerText
+          }
+          console.log(orderItemsObj);
+          // if(orderItemsListObj.indexOf(orderItemsObj) == -1){
+          //   orderItemsObj["orderedQuantity"] = 
+          // }
+          let found = 0,index=0;
+          orderItemsListObj.length?0:orderItemsListObj.push(orderItemsObj)
+          if(orderItemsListObj.length){
+            for(var i=0;i<orderItemsListObj.length;i++){
+              if(orderItemsListObj[i]["orderedID"] == "orderId_"+event.target.id.split("_")[1]){
+                found = 1;
+                index = i;
+              }
+            }
+            if(found ==1){
+              orderItemsListObj[index]["orderedQuantity"] = document.getElementById("addedItems_"+event.target.id.split("_")[1]).innerText;
+            }else{
+              orderItemsListObj.push(orderItemsObj)
+            }
+          }
+          console.log(copy);
+          
           document.getElementById("totalAmtTextContent").innerText = "$"+copy.toFixed(2);
         }
       });
@@ -210,7 +208,7 @@ var copy = 0;
             document.getElementById("cartBtn").innerText = "Confirm Order";
             var totalAmount = document.getElementsByClassName("amount")[i].innerText;
             
-            totalAmountText += Number(totalAmount.split("$")[1]);
+            totalAmountText += Number(totalAmount.split("$")[1].toFixed(2));
             
             document.getElementById("totalAmtTextContent").innerText = "$"+totalAmountText.toFixed(2);
           });

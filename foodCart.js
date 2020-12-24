@@ -208,7 +208,7 @@ var copy = 0;
             document.getElementById("cartBtn").innerText = "Confirm Order";
             var totalAmount = document.getElementsByClassName("amount")[i].innerText;
             
-            totalAmountText += Number(totalAmount.split("$")[1].toFixed(2));
+            totalAmountText += Number(totalAmount.split("$")[1]).toFixed(2);
             
             document.getElementById("totalAmtTextContent").innerText = "$"+totalAmountText.toFixed(2);
           });
